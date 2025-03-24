@@ -1,24 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MenuController : MonoBehaviour
+public abstract class MenuController : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject settingsMenu;
-    [SerializeField] private GameObject creditsMenu;
-
-    
-
-    // Start is called before the first frame update
-    void Start()
+    public void StartGame()
     {
-        
+        SceneManager.LoadScene("Game");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void Credits() => SceneManager.LoadScene("Credits");
+
+    public void Settings() => SceneManager.LoadScene("Settings");
+
+    public void QuitGame() => Application.Quit();
 }
