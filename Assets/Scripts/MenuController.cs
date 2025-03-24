@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenuPrefab;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject creditsMenu;
+
+    
 
     // Start is called before the first frame update
     void Start()
