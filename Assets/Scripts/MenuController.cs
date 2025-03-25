@@ -16,6 +16,7 @@ public static class MenuController
     
     public static void LoadMenu(Menu menu, GameObject callingMenu)
     {
+        if (!isInitialized) Initialize();
         switch (menu)
         {
             case Menu.MAIN_MENU:
