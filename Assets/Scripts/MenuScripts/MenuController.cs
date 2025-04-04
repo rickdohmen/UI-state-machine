@@ -1,39 +1,52 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class MenuController
 {
+
+    private static Dictionary<Menu, GameObject> menuDictionary = new Dictionary<Menu, GameObject>();
     public static bool isInitialized { get; private set; }
-    public static GameObject mainMenu, settingsMenu, creditsMenu;
     
+    public static void RegisterMenu(Menu menu, GameObject menuObject)
+    {
+        if (menuDictionary.ContainsKey(menu))
+        {
+            Debug.LogWarning($"Menu {menu} is already registered. Overwriting.");
+            menuDictionary[menu] = menuObject;
+        }
+        else
+        {
+            menuDictionary.Add(menu, menuObject);
+        }
+    }
+
     public static void Initialize()
     {
         if (isInitialized) return;
-        mainMenu = GameObject.Find("MainMenu");
-        settingsMenu = GameObject.Find("SettingsMenu");
-        creditsMenu = GameObject.Find("CreditsMenu");
-        isInitialized = true;
+        
+        foreach (var menu in menuDictionary)
+        {
+            if(menu.Value == null)
+            {
+                Debug.LogError($"Menu {menu.Key} is not assigned in the inspector. Please assign it.");
+            }
+        }
     }
     
-    public static void LoadMenu(Menu menu, GameObject callingMenu)
+    public static void LoadMenu(Menu menu)
     {
         if (!isInitialized) Initialize();
-        switch (menu)
+        foreach (var kvp in menuDictionary)
         {
-            case Menu.MAIN_MENU:
-                mainMenu.SetActive(true);
-                settingsMenu.SetActive(false);
-                creditsMenu.SetActive(false);
-                break;
-            case Menu.SETTINGS:
-                mainMenu.SetActive(false);
-                settingsMenu.SetActive(true);
-                creditsMenu.SetActive(false);
-                break;
-            case Menu.CREDITS:
-                mainMenu.SetActive(false);
-                settingsMenu.SetActive(false);
-                creditsMenu.SetActive(true);
-                break;
+            if (kvp.Key == menu)
+            {
+                kvp.Value.SetActive(true);
+            }
+            else
+            {
+                kvp.Value.SetActive(false);
+            }
         }
+        Debug.Log($"Loaded menu: {menu}");
     }
 }
