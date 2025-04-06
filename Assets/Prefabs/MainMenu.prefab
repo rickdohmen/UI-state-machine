@@ -257,9 +257,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7124022622325387313}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OnClickStart
+      - m_Target: {fileID: 3197977176941748866}
+        m_TargetAssemblyTypeName: MenuButtonHandler, Assembly-CSharp
+        m_MethodName: OpenMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -415,7 +415,8 @@ GameObject:
   - component: {fileID: 8430386217713440133}
   - component: {fileID: 4352004438796739988}
   - component: {fileID: 3054642411225901410}
-  - component: {fileID: 7124022622325387313}
+  - component: {fileID: 1971925477886050237}
+  - component: {fileID: 3197977176941748866}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -509,7 +510,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7124022622325387313
+--- !u!114 &1971925477886050237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -518,7 +519,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4669233572624104647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88fd24e1b82408d4786bb63d50b4d8e0, type: 3}
+  m_Script: {fileID: 11500000, guid: c6ae8a59be1ba7e42b87d5e0ca2cde53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuType: 0
+--- !u!114 &3197977176941748866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4669233572624104647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bc8783174b3de4f8ac00a8eab6268c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5276250410802025108
@@ -642,9 +656,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7124022622325387313}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OnClickCredits
+      - m_Target: {fileID: 3197977176941748866}
+        m_TargetAssemblyTypeName: MenuButtonHandler, Assembly-CSharp
+        m_MethodName: OpenCreditsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1043,9 +1057,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7124022622325387313}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OnClickSettings
+      - m_Target: {fileID: 3197977176941748866}
+        m_TargetAssemblyTypeName: MenuButtonHandler, Assembly-CSharp
+        m_MethodName: OpenSettingsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

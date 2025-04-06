@@ -252,7 +252,8 @@ GameObject:
   - component: {fileID: 5511943312293836991}
   - component: {fileID: 6966906740217257773}
   - component: {fileID: 2843346545756853263}
-  - component: {fileID: 8861216694460330023}
+  - component: {fileID: 617155639452750581}
+  - component: {fileID: 977427834093710050}
   m_Layer: 0
   m_Name: CreditsMenu
   m_TagString: Untagged
@@ -344,7 +345,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8861216694460330023
+--- !u!114 &617155639452750581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,7 +354,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4528086577227039415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c459529e3c230be42805c96abcbd6ed0, type: 3}
+  m_Script: {fileID: 11500000, guid: c6ae8a59be1ba7e42b87d5e0ca2cde53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuType: 2
+--- !u!114 &977427834093710050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528086577227039415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bc8783174b3de4f8ac00a8eab6268c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8172894740138391171
@@ -477,9 +491,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8861216694460330023}
-        m_TargetAssemblyTypeName: CreditsMenu, Assembly-CSharp
-        m_MethodName: OnClickBack
+      - m_Target: {fileID: 977427834093710050}
+        m_TargetAssemblyTypeName: MenuButtonHandler, Assembly-CSharp
+        m_MethodName: OpenMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
