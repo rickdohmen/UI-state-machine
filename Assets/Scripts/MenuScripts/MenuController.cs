@@ -31,6 +31,27 @@ public static class MenuController
                 Debug.LogError($"Menu {menu.Key} is not assigned in the inspector. Please assign it.");
             }
         }
+
+        isInitialized = true;
+        Debug.Log("MenuController initialized.");
+    }
+
+    public static bool IsMenuRegistered(Menu menu)
+    {
+        return menuDictionary.ContainsKey(menu);
+    }
+
+    public static GameObject GetMenu(Menu menu)
+    {
+        if (menuDictionary.TryGetValue(menu, out var menuObject))
+        {
+            return menuObject;
+        }
+        else
+        {
+            Debug.LogError($"Menu {menu} is not registered.");
+            return null;
+        }
     }
     
     public static void LoadMenu(Menu menu)
