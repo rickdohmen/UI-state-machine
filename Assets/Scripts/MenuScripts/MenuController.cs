@@ -20,7 +20,7 @@ public static class MenuController
         }
     }
 
-    public static void Initialize()
+    public static void Initialize(Menu defaultMenu)
     {
         if (isInitialized) return;
         
@@ -30,6 +30,8 @@ public static class MenuController
             {
                 Debug.LogError($"Menu {menu.Key} is not assigned in the inspector. Please assign it.");
             }
+
+            menu.Value.SetActive(menu.Key == defaultMenu);
         }
 
         isInitialized = true;
@@ -45,6 +47,7 @@ public static class MenuController
     {
         if (menuDictionary.TryGetValue(menu, out var menuObject))
         {
+            Debug.Log($"Retrieved menu: {menu}");
             return menuObject;
         }
         else
@@ -56,7 +59,7 @@ public static class MenuController
     
     public static void LoadMenu(Menu menu)
     {
-        if (!isInitialized) Initialize();
+        if (!isInitialized) Initialize(Menu .MAIN_MENU);
         foreach (var kvp in menuDictionary)
         {
             if (kvp.Key == menu)

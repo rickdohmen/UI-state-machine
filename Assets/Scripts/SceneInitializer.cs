@@ -6,9 +6,10 @@ using UnityEngine;
 public class SceneInitializer : MonoBehaviour
 {
     [SerializeField] private Menu defaultMenu = Menu.MAIN_MENU;
-        void Start()
+    private void Start()
     {
-        MenuController.LoadMenu(defaultMenu);
+        MenuController.Initialize(defaultMenu);
+        MenuStateManager.ChangeState(defaultMenu);
     }
 
 }

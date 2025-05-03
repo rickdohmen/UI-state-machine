@@ -6,6 +6,8 @@ public static class MenuStateManager
 
     public static void ChangeState(Menu newState)
     {
+        Debug.Log($"Attempting to change state from {currentState} to {newState}");
+
         if(currentState == newState) return; 
 
         if(MenuController.IsMenuRegistered(currentState))
@@ -18,6 +20,7 @@ public static class MenuStateManager
         {
             MenuController.GetMenu(newState).SetActive(true);
             Debug.Log($"Entered state: {newState}");
+            currentState = newState;
         }
         else
         {
